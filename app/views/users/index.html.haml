@@ -1,0 +1,16 @@
+.tab-content
+  #tab-pane
+    - if !@users || @users.empty?
+      %h3 No users
+    - else
+      %table.sortable{data: {update_url: '/users/sort', page: @page}}
+        %tr
+          %th Position
+          %th Name
+          %th Lastname
+          %th Email
+          %th Phone
+          - @users.each do |user|
+            = render 'user_row', user: user
+      .text-center
+        = will_paginate @users
