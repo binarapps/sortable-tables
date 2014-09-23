@@ -12,5 +12,5 @@
           %th Phone
           - @users.each do |user|
             = render 'user_row', user: user
-      .text-center
+      %p
         = will_paginate @users

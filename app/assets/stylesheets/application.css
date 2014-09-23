@@ -15,8 +15,6 @@
  */
 
  .sortable {
-  tr {
-    cursor: move;
-  }
+  cursor: move;
 }
 
