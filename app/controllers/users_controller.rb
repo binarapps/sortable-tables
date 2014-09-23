@@ -18,11 +18,6 @@ class UsersController < ApplicationController
 
   private
 
-  def collection
-    @users = User.gsub(/^/, '@').to_sym
-    instance_variable_set(@users, User.rank(:position).all)
-  end
-
   def user_params
       params.require(:user).permit(:name, :latname, :phone, :email, :position)
     end
